@@ -5,7 +5,7 @@ import { FirebaseService, AuthService } from '../../services'
 
 import { ToggleButton, SiderDrawer} from '../../Components'
 
-export default class Home extends Component{
+export default class Register extends Component{
 
     constructor(props){
         super(props);
