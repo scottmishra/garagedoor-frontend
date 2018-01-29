@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashRouter} from 'react-router-dom';
 import './App.css';
 import { Login, Home }from './Components'
 import { firebaseAuth } from './constants'

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import { Drawer, FloatingActionButton, FontIcon, MenuItem } from 'material-ui'
 import { CardTitle } from 'material-ui/Card';
 import { FirebaseService, AuthService } from '../../services'
@@ -31,12 +32,13 @@ export default class SideDrawer extends Component{
         return(
             <div>
                 <Drawer open={this.state.toggleMenu}>
-                    <MenuItem>Register New User</MenuItem>
-                    <MenuItem>Register Guest</MenuItem>
+                    <MenuItem>
+                        <Link to='/RegisterUser'>Register New User</Link>
+                    </MenuItem>
+                    <MenuItem>
+                        <Link to='/RegisterGuest'>Register Guest</Link>
+                    </MenuItem>
                 </Drawer>
-                <FloatingActionButton primary={true} onClick={this.switchMenu} style={style}>
-                    <FontIcon className='fa fa-bars' />
-                </FloatingActionButton>
             </div>
         )
     }

@@ -62,13 +62,11 @@ export default class ToggleButton extends Component{
     render(){
         return(
             <Card>
-                <CardTitle title="Scott's Awesome Garage Door Opener">
-                </CardTitle>
+                <CardTitle title="Garage Door Controls"></CardTitle>
                 <CardActions> 
-                
-                <RaisedButton  label={this.getOpenCloseLabel()} primary={true} onClick={this.changeGarageState} disabled={!this.state.garageAccess}/>
-                <RaisedButton label={this.getAccessLabel()} secondary={true} onClick={(event) => this.updateGarageAccess(event)}/>
-                <RaisedButton label="Log Out" onClick={(event) => this.logOut(event)}/>
+                    <RaisedButton  label={this.getOpenCloseLabel()} primary={true} onClick={this.changeGarageState} disabled={!this.state.garageAccess}/>
+                    <RaisedButton label={this.getAccessLabel()} secondary={true} onClick={(event) => this.updateGarageAccess(event)}/>
+                    <RaisedButton label="Log Out" onClick={(event) => this.logOut(event)}/>
                 </CardActions>
             </Card>
         );

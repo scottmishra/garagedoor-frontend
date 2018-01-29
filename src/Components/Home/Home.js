@@ -1,21 +1,38 @@
 import React, { Component } from 'react'
-import { Card, CardText, FlatButton, TextField, RaisedButton } from 'material-ui'
+import { Link, Switch, Route } from 'react-router-dom'
+import { AppBar, Card, CardText, FlatButton, IconButton, MoreVertIcon,MenuItem, IconMenu, TextField, RaisedButton, } from 'material-ui'
 import { CardTitle } from 'material-ui/Card';
 import { FirebaseService, AuthService } from '../../services'
 
-import { ToggleButton, SiderDrawer} from '../../Components'
+import { ToggleButton, SiderDrawer } from '../../Components'
+import Register from '../Register/Register';
 
-export default class Home extends Component{
+export default class Home extends Component {
 
-    constructor(props){
-        super(props);
+    constructor() {
+        super();
+    
     }
-
-    render(){
-        return(
+    render() {
+        return (
             <div>
+                <AppBar title="Scott's Awesome Garage Door Opener"
+                    iconElementRight={
+                            <span>
+                                <Link to="/RegisterUser">
+                                    <FlatButton label="Register User" />
+                                </Link>
+                                <Link to="/RegisterGuest">
+                                    <FlatButton label="Register Guest" />
+                                </Link>
+                            </span>
+                        }
+                />
                 <ToggleButton />
-                <SiderDrawer />
+                <Switch>
+                    <Route exact path='/RegisterUser' render={() => <Register isGuest={false} />} />
+                    <Route exact path='/RegisterGuest' render={() => <Register isGuest={true} />} />
+                </Switch>
             </div>
         )
     }
